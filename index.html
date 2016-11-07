@@ -2,7 +2,7 @@
 <head>
     <title>Phone Number Simulator</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+    <script src="hamburger.js"></script>
     <script>
         $(function() {
             $("#phonenumber").on("input",function() {
@@ -17,7 +17,7 @@
             });
         })
     </script>
-
+    <link rel="stylesheet" type="text/css" href="hamStyle.css">
     <style>
     body {
         margin: 1em;
@@ -29,7 +29,16 @@
     </style>
 </head>
 <body>
-    <div id="fixed">
+  <section class="wrapper">
+
+  <section class="material-design-hamburger">
+    <button class="material-design-hamburger__icon">
+      <span class="material-design-hamburger__layer"></span>
+    </button>
+  </section>
+
+  <section class="menu menu--off">
+    <div><div id="fixed">
         <h2>Please enter your phone number</h2>
     </div>
 
@@ -37,6 +46,14 @@
         <p>My phone number is: <span id="display"></span></p>
         <input type="range" id="phonenumber" name="points" min="0" max="9999999999999">
         <button>Submit</button>
-    </form>
+    </form></div>
+    <div>Android's Material Design Hamburger Animation</div>
+    <div>Adapted for the web by <a href="https://swirlycheetah.com" target="_blank">Chris Wheatley</a></div>
+    <div><a href="https://github.com/swirlycheetah/material-design-hamburger" target="_blank">Available on GitHub</a></div>
+    <div><a href="https://twitter.com/swirlycheetah" target="_blank">Follow me on Twitter @swirlycheetah</a></div>
+  </section>
+
+</section>
+
 </body>
 </html>
