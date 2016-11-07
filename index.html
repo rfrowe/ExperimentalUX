@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Phone Number Simulator</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#phonenumber").on("input",function() {
+                var number = $(this).val() % 10000000000;
+                var area = Math.floor(number / 10000000);
+                var middle = Math.floor(number % 10000000 / 10000);
+                var end  = Math.floor(number % 10000);
+                var phonenumber = (area).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping:false});
+                phonenumber += " " + (middle).toLocaleString('en-US', {minimumIntegerDigits: 3, useGrouping:false});
+                phonenumber += " " + (end).toLocaleString('en-US', {minimumIntegerDigits: 4, useGrouping:false});
+                $("#display").html(phonenumber);
+            });
+        })
+    </script>
+
+    <style>
+    body {
+        margin: 1em;
+        font-family: Helvetica, Calibri, sans-serif;
+    }
+    #phonenumber {
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div id="fixed">
+        <h2>Please enter your phone number</h2>
+    </div>
+
+    <form>
+        <p>My phone number is: <span id="display"></span></p>
+        <input type="range" id="phonenumber" name="points" min="0" max="9999999999999">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
